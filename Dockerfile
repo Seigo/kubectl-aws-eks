@@ -1,7 +1,8 @@
 FROM amazon/aws-cli
 
-#https://dl.k8s.io/v1.19.0/kubernetes-client-linux-amd64.tar.gz
-RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/1.19.0/bin/linux/amd64/kubectl && \
+RUN curl -LO https://dl.k8s.io/v1.19.0/kubernetes-client-linux-amd64.tar.gz && \
+    tar xzf kubernetes-client-linux-amd64.tar.gz && \
+    mv kubernetes/client/bin/kubectl ./ && \
     curl -o /usr/local/bin/aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator && \
     chmod +x /usr/local/bin/aws-iam-authenticator && \
     chmod +x ./kubectl && \
