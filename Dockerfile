@@ -1,5 +1,6 @@
 FROM amazon/aws-cli
 
+WORKDIR /workwork
 RUN curl -LO https://dl.k8s.io/v1.19.0/kubernetes-client-linux-amd64.tar.gz
 RUN ls -alh
 ADD ./kubernetes-client-linux-amd64.tar.gz ./
