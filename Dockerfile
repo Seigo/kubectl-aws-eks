@@ -4,7 +4,11 @@ WORKDIR /workwork
 RUN curl -LO https://dl.k8s.io/v1.19.0/kubernetes-client-linux-amd64.tar.gz
 RUN ls -alh
 RUN pwd
-ADD kubernetes-client-linux-amd64.tar.gz kubernetesTempDir/
+ADD /workwork/kubernetes-client-linux-amd64.tar.gz /workwork/
+# RUN yum -y update && \
+#     yum install -y tar.x86_64 && \
+#     yum clean all
+# RUN tar -xzf kubernetes-client-linux-amd64.tar.gz
 RUN ls -alh
 RUN pwd
 RUN mv kubernetesTempDir/kubernetes/client/bin/kubectl ./ && \
