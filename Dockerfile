@@ -7,6 +7,7 @@ RUN pwd
 # ADD /workwork/kubernetes-client-linux-amd64.tar.gz /workwork/
 RUN yum -y update && \
     yum install -y tar && \
+    yum install -y gzip && \
     yum clean all
 RUN ls -alh /usr/bin/tar
 RUN tar -xzf kubernetes-client-linux-amd64.tar.gz
